@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./App.css";
 import NasaGrid from "./Components/NasaGrid";
+import styled from "styled-components";
+
+const WebPg = styled.div`
+  background-image: url("https://images.unsplash.com/photo-1518818419601-72c8673f5852?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
 
 function App() {
   const [displayState, setDisplayState] = useState([]);
@@ -19,13 +25,13 @@ function App() {
       });
   }, []);
   return (
-    <div className="App">
+    <WebPg className="App">
       <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun 🚀!
       </p>
       <NasaGrid displayState={displayState} />;
-    </div>
+    </WebPg>
   );
 }
 

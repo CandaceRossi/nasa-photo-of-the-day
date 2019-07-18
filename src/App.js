@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from "react";
+import ReactDOM from "react-dom";
 import axios from "axios";
 import NasaGrid from "./Components/NasaGrid";
 import styled from "styled-components";
+import Buttons from "./Buttons";
 
 const WebPg = styled.div`
   background-image: url("https://images.unsplash.com/photo-1518818419601-72c8673f5852?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
   background-repeat: no-repeat;
   background-size: cover;
 `;
-
+const TextStyle = styled.p`
+padding-top: 20px;
+padding-bottom: 0px;
+color: white;
+text-align: center;
+font-size 3rem;
+text-shadow: 1px 1px slategray;
+font-style: sans-serif;
+`;
 function App() {
   const [displayState, setDisplayState] = useState([]);
   console.log("displayState", displayState);
@@ -26,11 +36,9 @@ function App() {
   }, []);
   return (
     <WebPg className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <TextStyle>Nasa's Photo of the Day 🚀!</TextStyle>
       <NasaGrid displayState={displayState} />;
+      <Buttons className="Buttons" />
     </WebPg>
   );
 }

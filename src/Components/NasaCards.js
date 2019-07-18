@@ -7,12 +7,12 @@ const CardBg = styled.div`
   background-image: linear-gradient(to bottom, black, #2c3e50);
   border-radius: 7px;
   text-align: center;
-  padding: 20px 20px;
+  padding: 10px 10px;
 `;
 const TextStyle = styled.div`
   color: orange;
   font-size: 2.3rem;
-  text-shadow: 2px 2px slategray;
+  text-shadow: 1px 1px slategray;
   font-style: sans-serif;
 `;
 function NasaCards(props) {

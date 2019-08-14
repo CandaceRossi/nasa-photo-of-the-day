@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import "./App.css";
+import NasaGrid from "./Components/NasaGrid";
 
 function App() {
-  const [planets, setPlanets] = useState();
+  const [planets, setPlanets] = useState([]);
   useEffect(() => {
     axios
       .get(
         "https://api.nasa.gov/planetary/apod?api_key=bUQejLy5bCxYfj5G4AZTMnERt4bix31L38akbKrG"
       )
       .then(res => {
-        const image = res.data;
-        console.log("pics go here", image);
-        setPlanets(image);
+        const data = res.data;
+        console.log("this is the data", data);
+        setPlanets(data);
       });
   }, []);
   return (
@@ -21,6 +22,7 @@ function App() {
         Read through the instructions in the README.md file to build your NASA
         app! Have fun 🚀!
       </p>
+      <NasaGrid planets={planets} />
     </div>
   );
 }

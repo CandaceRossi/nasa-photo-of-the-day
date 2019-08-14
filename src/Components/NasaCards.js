@@ -1,3 +1,17 @@
+import React from "react";
+
+function NasaCard(props) {
+  const data = props.data;
+  return (
+    <div>
+      <img src={data.url} style={{ maxWidth: "300px" }} />
+      <h2>{data.title}</h2>
+      <p>{data.date}</p>
+      <p>{data.explanation}</p>
+    </div>
+  );
+}
+export default NasaCard;
 //Old work
 // import React from "react";
 // import styled from "styled-components";

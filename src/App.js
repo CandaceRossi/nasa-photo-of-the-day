@@ -1,3 +1,32 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./App.css";
+
+function App() {
+  const [planets, setPlanets] = useState();
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.nasa.gov/planetary/apod?api_key=bUQejLy5bCxYfj5G4AZTMnERt4bix31L38akbKrG"
+      )
+      .then(res => {
+        const image = res.data;
+        console.log("pics go here", image);
+        setPlanets(image);
+      });
+  }, []);
+  return (
+    <div className="App">
+      <p>
+        Read through the instructions in the README.md file to build your NASA
+        app! Have fun 🚀!
+      </p>
+    </div>
+  );
+}
+
+export default App;
+
 //Old Work
 // import React, { useEffect, useState } from "react";
 // import axios from "axios";

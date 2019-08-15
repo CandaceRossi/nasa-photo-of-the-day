@@ -1,9 +1,17 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  width: 750px;
+  height: 750px;
+  margin: 0 auto;
+  background: purple;
+`;
 
 function NasaCard(props) {
   return (
-    <div>
+    <StyledDiv>
       <Card>
         <Image src={props.data.url} wrapped ui={false} />
         <Card.Content>
@@ -14,7 +22,7 @@ function NasaCard(props) {
           <Card.Description>{props.data.explanation}</Card.Description>
         </Card.Content>
       </Card>
-    </div>
+    </StyledDiv>
   );
 }
 export default NasaCard;

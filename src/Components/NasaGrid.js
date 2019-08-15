@@ -1,11 +1,18 @@
 import React from "react";
 import NasaCard from "./NasaCards";
+import styled from "styled-components";
 
+const StyledDiv = styled.div`
+  width: 750px;
+  height: 750px;
+  margin: 0 auto;
+  background: purple;
+`;
 function NasaGrid(props) {
   return (
-    <div>
+    <StyledDiv>
       <NasaCard data={props.planets} />
-    </div>
+    </StyledDiv>
   );
 }
 export default NasaGrid;

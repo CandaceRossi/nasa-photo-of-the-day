@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import "./App.css";
 import NasaGrid from "./Components/NasaGrid";
+import { Container } from "semantic-ui-react";
 
 function App() {
   const [planets, setPlanets] = useState([]);
@@ -17,12 +18,10 @@ function App() {
       });
   }, []);
   return (
-    <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
-      <NasaGrid planets={planets} />
+    <div>
+      <Container>
+        <NasaGrid planets={planets} />
+      </Container>
     </div>
   );
 }

@@ -1,13 +1,19 @@
 import React from "react";
+import { Card, Image } from "semantic-ui-react";
 
 function NasaCard(props) {
-  const data = props.data;
   return (
     <div>
-      <img src={data.url} style={{ maxWidth: "300px" }} />
-      <h2>{data.title}</h2>
-      <p>{data.date}</p>
-      <p>{data.explanation}</p>
+      <Card>
+        <Image src={props.data.url} wrapped ui={false} />
+        <Card.Content>
+          <Card.Header>{props.data.title}</Card.Header>
+          <Card.Meta>
+            <span>{props.data.date}</span>
+          </Card.Meta>
+          <Card.Description>{props.data.explanation}</Card.Description>
+        </Card.Content>
+      </Card>
     </div>
   );
 }

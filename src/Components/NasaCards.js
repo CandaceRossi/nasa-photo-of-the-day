@@ -1,59 +1,39 @@
 import React from "react";
-import { Card, Image } from "semantic-ui-react";
+import { Card, Content } from "semantic-ui-react";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  width: 750px;
-  height: 750px;
-  margin: 0 auto;
-  background: purple;
+
+    display: flex;
+    justify-content: center !important;
+    width: 650px !important;
+    height: auto;
+    margin: 0px;
+    margin-top: 35px;
 `;
 
 function NasaCard(props) {
   return (
     <StyledDiv>
       <Card>
-        <Image src={props.data.url} wrapped ui={false} />
-        <Card.Content>
-          <Card.Header>{props.data.title}</Card.Header>
-          <Card.Meta>
+        {/* <Image className="ui medium image" src={props.data.url} wrapped ui={false} /> */}
+        
+        <Card.Content
+          style={{
+            height: "500px",
+            backgroundImage: `url(${(props.data.url)})`,
+            backgroundSize: "cover",
+          }}
+        />
+        {/* </Card.Content> */}
+          <Card.Header style={{width: "100%", fontSize: "1.5rem", display:"flex", justifyContent: "center", margin:"0 auto", marginTop:"15px"}}>{props.data.title}</Card.Header>
+          <Card.Meta style={{fontSize:"1.3rem", margin: "0px", marginBottom: "10px"}}>
             <span>{props.data.date}</span>
           </Card.Meta>
-          <Card.Description>{props.data.explanation}</Card.Description>
-        </Card.Content>
+          <Card.Description style={{width: "100%", margin: "0 auto", marginBottom: "25px"}}>{props.data.explanation}</Card.Description>
+        {/* </Card.Content> */}
       </Card>
-    </StyledDiv>
+   </StyledDiv>
   );
 }
 export default NasaCard;
-//Old work
-// import React from "react";
-// import styled from "styled-components";
-
-// const CardBg = styled.div`
-//   width: 800px;
-//   margin: 0 auto;
-//   background-image: linear-gradient(to bottom, black, #2c3e50);
-//   border-radius: 7px;
-//   text-align: center;
-//   padding: 10px 10px;
-// `;
-// const TextStyle = styled.div`
-//   color: orange;
-//   font-size: 2.3rem;
-//   text-shadow: 1px 1px slategray;
-//   font-style: sans-serif;
-// `;
-// function NasaCards(props) {
-//   const data = props.data;
-//   return (
-//     <CardBg>
-//       <TextStyle>{data.title}</TextStyle>
-//       <img src={data.url} style={{ maxWidth: "450px" }} />
-//       <TextStyle>{data.date}</TextStyle>
-//       <div>{data.copyright}</div>
-//     </CardBg>
-//   );
-// }
-
-// export default NasaCards;

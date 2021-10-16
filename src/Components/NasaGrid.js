@@ -3,10 +3,12 @@ import NasaCard from "./NasaCards";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  width: 750px;
-  height: 750px;
-  margin: 0 auto;
-  background: purple;
+
+    display: flex;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100%;
+    margin: 0px;
 `;
 function NasaGrid(props) {
   return (
@@ -16,20 +18,3 @@ function NasaGrid(props) {
   );
 }
 export default NasaGrid;
-
-//Old work
-// import React from "react";
-// import NasaCards from "./NasaCards";
-// function NasaGrid(props) {
-//   return (
-//     <div>
-//       <NasaCards data={props.displayState} />
-//     </div>
-//   );
-// }
-// export default NasaGrid;
-
-//title={props.title}
-//img={props.url}
-// date={props.date}
-// explanation={props.explanation}
